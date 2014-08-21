@@ -18,7 +18,7 @@
 int main (int argc , char* argv[]){
     
 	int estado=0;
-	userData data={5,5,1,VISUAL};  /*Estructura que contendra la informacion que se pareseara*/
+	userData data={2,2,1,VISUAL};  /*Estructura que contendra la informacion que se pareseara*/
 	void* pdata;
 	simulacionType simulacion;	//creo una estructura de la simulacion
 
@@ -57,8 +57,8 @@ int main (int argc , char* argv[]){
              
              allegroSimulator (simulacion);     //no lo devuelvo a ningun valor ya que no me aporta informacion aqui el promedio
              
-             
-             
+             //free(piso.baldosas);
+             //free(robots);
             
              closeAllegro();
         }
@@ -84,15 +84,17 @@ int main (int argc , char* argv[]){
                     simulacion.robots = robots;
                     simulacion.robotCount = data.robots;
                     
-                    promedio = realSimulator (simulacion);
+                    promedio = realSimulator (simulacion);          //no develve ningun promedio, hay que mult por los ticks por segundo y m da la cant de segundos
+                                                                    //despues hay que hacer la funcion que saque distintoos promedios y los guarde en un arreglo de ints
+                                                                    // hay que calcular que termine cuando el anteultimo promeido sacado tiene una diferencia de solo 0.1 segundos
                                  
                     //free (piso.baldosas);
                     //free (robots);
                     
-                    return 0;
+                    
                 } 
                 
-            } while ((promedion1 - promedio) < 0.1);
+            } while ((promedion1 - promedio) < 0.1);        
         }
 
         

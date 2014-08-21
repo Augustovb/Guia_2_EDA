@@ -3,17 +3,17 @@
 
 #ifndef ROBOT__H
 #define ROBOT__H
-/************************
- *		BOOL CREATION	*
- ************************/
+/*****************************************
+ *		BOOL CREATION               *
+ *****************************************/
 #define bool int
 #define true 1
 #define false 0
 
 
-/************************
- *		CONSTANTES		*
- ************************/
+/*********************************************
+ *		CONSTANTES                      *
+ ********************************************/
 
 #define PI 3.141592653589 // solo por precision
 
@@ -27,9 +27,9 @@
 #define VISUAL		10
 #define	MILSIMS		20
 
-/************************
- *		DEFINICIONES	*
- ************************/
+/***************************************
+ *		DEFINICIONES           *
+ ***************************************/
 
 typedef struct {
 	double x;				//un punto tiene una coordenada x y una coordenada y

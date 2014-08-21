@@ -20,19 +20,16 @@ int parseCmdLine(int argc, char *argv[], pCallback callback, void *userData){
             //debo chequear dos cosas: que no sea vacia la "opcion" es decir un '-' por si mismo
             //y que el proximo argumento, exista y no sea otra opcion
             if(((*argv[i])+1)=='\0'){
-                printf ("Ha introducido una clave erroneamente.\n");
+              
                 return ERROR;
             }
             
-			if((i+1)==argc){
-                            printf ("Ha introducido una clave sin su valor.\n");
-                            return ERROR;       //se paso como ultimo elemento una opcion sin valor
+            if((i+1)==argc){
+                            
+            return ERROR;       //se paso como ultimo elemento una opcion sin valor
             }
             
-            if((*argv[i+1])=='-'){
-                printf ("Este programa no acepta valores negativos\n");
-                return ERROR;
-            }
+            
             
             //finalmente si todo esta bien, llamo al callback
             

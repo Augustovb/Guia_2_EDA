@@ -224,7 +224,8 @@ void graficarRobots (simulacionType simulacion,ALLEGRO_BITMAP* R2D2){
 void grafRobot (robotType robot, ALLEGRO_BITMAP* R2D2){
     
     //void al_draw_rotated_bitmap(ALLEGRO_BITMAP *bitmap,float cx, float cy, float dx, float dy, float angle, int flags)
-    al_draw_bitmap(R2D2, robot.posicion.y-5, robot.posicion.x-5,0);
+    //al_draw_rotated_bitmap(R2D2,15,15, robot.posicion.y-8, robot.posicion.x-8,(float)robot.angle,0);
+    al_draw_bitmap(R2D2,robot.posicion.y-8,robot.posicion.x-8,0);
     
 }
 
