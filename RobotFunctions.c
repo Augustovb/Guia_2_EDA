@@ -20,7 +20,8 @@ pisoType crearPiso(unsigned int largo, unsigned int ancho){
 	if(piso.baldosas == NULL){			//hubo un problema en la alocacion de la memoria
 		printf("No hubo memoria suficiente apara alocar");
 		free(piso.baldosas);
-		// exit -1;
+                piso.baldosas=NULL;
+		return piso;
 	}
 
 	for(i=0; i<ancho*largo ; ++i){
@@ -44,7 +45,7 @@ robotType *crearRobots (unsigned int numero, pisoType piso)
     if(robots == NULL){			//hubo un problema en la alocacion de la memoria
 		printf("No hubo memoria suficiente apara alocar");
 		free(robots);
-		// exit -1;
+		return NULL;
 	}
 
     for(i=0; i<numero ; ++i){

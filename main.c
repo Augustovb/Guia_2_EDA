@@ -18,7 +18,7 @@
 int main (int argc , char* argv[]){
     
 	int estado=0;
-	userData data={2,2,1,VISUAL};  /*Estructura que contendra la informacion que se pareseara*/
+	userData data={25,25,15,MILSIMS};  /*Estructura que contendra la informacion que se pareseara*/
 	void* pdata;
 	simulacionType simulacion;	//creo una estructura de la simulacion
 
@@ -50,6 +50,9 @@ int main (int argc , char* argv[]){
                     
              piso = crearPiso (data.largo, data.ancho);
              robots = crearRobots (data.robots, piso);
+             if(piso.baldosas==NULL|| robots==NULL){
+                 printf("Error en la alocacion de la memoria\n");
+             }
                                                  
              simulacion.piso = &piso;
              simulacion.robots = robots;
@@ -57,8 +60,8 @@ int main (int argc , char* argv[]){
              
              allegroSimulator (simulacion);     //no lo devuelvo a ningun valor ya que no me aporta informacion aqui el promedio
              
-             //free(piso.baldosas);
-             //free(robots);
+             free(piso.baldosas);
+             free(robots);
             
              closeAllegro();
         }
@@ -79,6 +82,9 @@ int main (int argc , char* argv[]){
                     
                     piso = crearPiso (data.largo, data.ancho);
                     robots = crearRobots (data.robots, piso);
+                    if(piso.baldosas==NULL|| robots==NULL){
+                        printf("Error en la alocacion de la memoria\n");
+                     }
                                                  
                     simulacion.piso = &piso;
                     simulacion.robots = robots;
@@ -88,8 +94,8 @@ int main (int argc , char* argv[]){
                                                                     //despues hay que hacer la funcion que saque distintoos promedios y los guarde en un arreglo de ints
                                                                     // hay que calcular que termine cuando el anteultimo promeido sacado tiene una diferencia de solo 0.1 segundos
                                  
-                    //free (piso.baldosas);
-                    //free (robots);
+                    free (piso.baldosas);
+                    free (robots);
                     
                     
                 } 
